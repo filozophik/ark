@@ -7,10 +7,10 @@
  */
 
 nav ul a,
-nav .brand-logo {
+nav .brand-logo, .main.header {
   color: #444;
+  font-family: "Josefin Slab";
 }
-
 p {
   line-height: 2rem;
 }
