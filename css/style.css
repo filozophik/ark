@@ -6,11 +6,45 @@
  * Made By MaterializeCSS.com
  */
 
+/* Main Website Template */
+
+@media screen and (min-width: 993px) {
+    main {
+        padding-left: 240px;
+    }
+}
+
+.card-image img {
+    max-height:345px;
+    overflow-y:hidden;
+}
+/* Card */
+.card-title {
+    color: black !important;
+    padding: 0 20px !important;
+    background-clip: padding-box;
+    background-color: lightcoral;
+    margin: 20px 0;
+}
+/* Side-Nav logo */
+a#logo-container {
+    font-size:35px;
+}
+.logo {
+    text-align:center;
+    padding-top:15px;
+}
+.logo:hover, a#logo-container:hover {
+    background:none;
+}
+
+/* Main Nav Logo */
 nav ul a,
 nav .brand-logo, .main.header {
   color: #444;
   font-family: "Josefin Slab";
 }
+
 p {
   line-height: 2rem;
 }
