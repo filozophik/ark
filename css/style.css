@@ -44,7 +44,9 @@ nav .brand-logo, .main.header {
   color: #444;
   font-family: "Josefin Slab";
 }
-
+nav ul a:hover {
+    background-color:transparent;
+}
 p {
   line-height: 2rem;
 }
