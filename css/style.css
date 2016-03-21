@@ -38,6 +38,18 @@ a#logo-container {
     background:none;
 }
 
+/* Home */
+.home {
+    margin-top:-64px;
+    height:100vh;
+    background:url('../images/hero.jpg') no-repeat center center;
+    background-size:cover;
+}
+.home-secondary {
+    background: url('../images/home/clothing_store.jpg') no-repeat center center;
+    height:500px;
+}
+
 /* Main Nav Logo */
 nav ul a,
 nav .brand-logo, .main.header {
@@ -55,17 +67,7 @@ p {
   color: #26a69a;
 }
 
-.parallax-container {
-  min-height: 500px;
-  line-height: 0;
-  height: auto;
-  color: rgba(255,255,255,.9);
-}
-  .parallax-container .section {
-      position:absolute;
-    width: 100%;
-  }
-.parallax-container .dimmer {
+.dimmer {
     position: absolute;
     top: 0;
     right: 0;
@@ -75,10 +77,6 @@ p {
     background-color: rgba(0,0,0,0.6);
 }
 @media only screen and (max-width : 992px) {
-  .parallax-container .section {
-    position: absolute;
-    top: 40%;
-  }
   #index-banner .section {
     top: 10%;
   }
