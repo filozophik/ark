@@ -1,0 +1,11 @@
+.home {
+  margin-top: -64px;
+  height: 100vh;
+  background: url("../images/ark1.jpg") no-repeat center center;
+  background-size: cover; }
+
+.home-secondary {
+  background: url("../images/home/clothing_store.jpg") no-repeat center center;
+  height: 500px; }
+
+/*# sourceMappingURL=app.css.map */
