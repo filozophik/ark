@@ -20,4 +20,5 @@
     angular.module('app.services', []);
     angular.module('app.directives', []);
     angular.module('app.config', ['ngMaterial']);
+
 })();

@@ -1,0 +1,36 @@
+/* Custom Stylesheet */
+/**
+* Use this file to override Materialize files so you can update
+* the core Materialize files in the future
+*
+* Made By MaterializeCSS.com
+*/
+/* Main Website Template */
+.header, .brand-logo {
+  font-family: "Josefin Slab"; }
+
+/* Main Nav Logo */
+nav {
+  background-color: white; }
+  nav ul a, nav .brand-logo {
+    color: #444; }
+
+p {
+  line-height: 2rem; }
+
+.home {
+  margin-top: -64px;
+  height: 100vh;
+  background: url("../images/ark1.jpg") no-repeat center center;
+  background-size: cover; }
+
+.home-secondary {
+  background: url("../images/home/clothing_store.jpg") no-repeat center center;
+  height: 500px; }
+
+.home .container, .home-secondary .container {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 1.5rem; }
+
+/*# sourceMappingURL=app.css.map */
