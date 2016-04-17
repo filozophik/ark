@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <title>Arch & Sun Designs</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Josefin+Slab:100,300,400" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="/css/vendor.css">
     <link rel="stylesheet" href="/css/app.css">
-    <link href="//fonts.googleapis.com/css?family=Josefin+Slab:100,300,400" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div ui-view="header"></div>

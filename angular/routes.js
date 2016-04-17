@@ -21,18 +21,21 @@
                     },
                     main: {
                         templateUrl: getView('landing')
+                    },
+                    footer: {
+                        templateUrl: getView('footer')
                     }
                 }
             }).state('browse', {
-            url: '/browse',
-            views: {
-                main: {
-                    templateUrl: getView('browse')
-                },
-                footer: {
-                    templateUrl: getView('footer')
+                url: '/browse',
+                views: {
+                    header: {
+                        templateUrl: getView('shopping-header')
+                    },
+                    main: {
+                        templateUrl: getView('browse')
+                    }
                 }
-            }
         });
 
     } );

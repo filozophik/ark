@@ -6,6 +6,15 @@
  */
 var gulp = require('gulp');
 var mainBowerFiles = require('main-bower-files');
+var appJS = [
+    'bower_components/jquery/dist/jquery.js',
+    'bower_components/materialize/dist/js/materialize.js',
+    'bower_components/angular/angular.js',
+    'bower_components/lodash/lodash.js',
+    'bower_components/angular-ui-router/release/angular-ui-router.js',
+    'bower_components/restangular/dist/restangular.js',
+    'bower_components/angular-materialize/src/angular-materialize.js'
+];
 var filter = require('gulp-filter');
 var notify = require('gulp-notify');
 var minify = require('gulp-minify-css');
@@ -38,7 +47,7 @@ Elixir.extend('bower', function(jsOutputFile, jsOutputFolder, cssOutputFile, css
     };
 
     new Task('bower-js', function() {
-        return gulp.src(mainBowerFiles())
+        return gulp.src(appJS)
             .on('error', onError)
             .pipe(filter('**/*.js'))
             .pipe(concat(jsFile, {sourcesContent: true}))

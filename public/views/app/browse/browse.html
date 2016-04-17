@@ -21,18 +21,35 @@
         </div>
     </div>
     <div class="row">
-        <div class="col s12 m4 l3" ng-repeat="product in products">
-            <div class="card">
-                <div class="card-image">
-
-                    <img ng-src="{{ 'images/products/' + product.category + '/' + product.pictures[0] }}">
-                </div>
-                <div class="card-content">
-                    <p>{{ product.description }}</p>
-                </div>
-                <div class="card-action">
-                    <a class="modal-trigger" href="#modal1"><i class="fa fa-shopping-bag"></i></a>
-                    <span class="right">{{ product.price | currency }}</span>
+        <div class="col s12 l3">
+            <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header">First</div>
+                    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                </li>
+                <li>
+                    <div class="collapsible-header">Second</div>
+                    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                </li>
+                <li>
+                    <div class="collapsible-header">Third</div>
+                    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+                </li>
+            </ul>
+        </div>
+        <div class="col s12 l9">
+            <div class="col s6 m4 l3" ng-repeat="product in products">
+                <div class="card medium">
+                    <div class="card-image">
+                        <img ng-src="{{ 'images/products/' + product.category + '/' + product.pictures[0] }}">
+                    </div>
+                    <div class="card-content">
+                        <p class="truncate">{{ product.description }}</p>
+                    </div>
+                    <div class="card-action">
+                        <a class="modal-trigger" href="#modal1"><i class="fa fa-shopping-bag"></i></a>
+                        <span class="right">{{ product.price | currency }}</span>
+                    </div>
                 </div>
             </div>
         </div>

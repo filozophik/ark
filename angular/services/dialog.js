@@ -1,4 +1,4 @@
-(function(){
+/*(function(){
     "use strict";
 
     angular.module("app.services").factory('DialogService', function( $mdDialog ){
@@ -31,4 +31,4 @@
             }
         };
     });
-})();
+})();*/
