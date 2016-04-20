@@ -9,6 +9,9 @@
 .header, .brand-logo {
   font-family: "Josefin Slab"; }
 
+nav {
+  color: black; }
+
 /* Main Nav Logo */
 nav {
   background-color: white; }
@@ -32,5 +35,23 @@ p {
   background: rgba(255, 255, 255, 0.7);
   border-radius: 10px;
   padding: 1.5rem; }
+
+nav .brand-logo {
+  padding: 0 1rem; }
+
+li .brand-logo {
+  position: relative; }
+
+.collapsible .collapsible-header {
+  font-weight: 500; }
+
+.collapsible .main {
+  border-bottom: solid 2px #bbb6b6;
+  font-weight: 300;
+  font-size: 1.4rem; }
+
+.collapsible ul {
+  color: #999;
+  font-size: 0.9rem; }
 
 /*# sourceMappingURL=app.css.map */

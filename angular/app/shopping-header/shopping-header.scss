@@ -1,0 +1,23 @@
+
+.brand-logo {
+  nav & {
+    padding: 0 1rem;
+  }
+  li & {
+    position: relative;
+  }
+}
+.collapsible {
+  .collapsible-header {
+    font-weight: 500;
+  }
+  .main {
+      border-bottom: solid 2px #bbb6b6;
+      font-weight:300;
+      font-size:1.4rem;
+  }
+  ul {
+    color:#999;
+    font-size:0.9rem;
+  }
+}
