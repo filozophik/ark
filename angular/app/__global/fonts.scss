@@ -14,3 +14,18 @@
 nav {
   color:black;
 }
+
+.breadcrumb {
+  color:rgba(0,0,0,0.7);
+  &:before {
+    font-size:14px;
+    font-family: FontAwesome;
+    color:black;
+    content: "\f0da";
+    vertical-align: middle;
+  }
+
+  &:last-child {
+    color: #f44336;
+  }
+}

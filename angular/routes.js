@@ -36,7 +36,17 @@
                         templateUrl: getView('browse')
                     }
                 }
-        });
+            }).state('product', {
+                url: '/product',
+                views: {
+                    header: {
+                        templateUrl: getView('shopping-header')
+                    },
+                    main: {
+                        templateUrl: getView('product')
+                    }
+                }
+            });
 
-    } );
+    });
 })();

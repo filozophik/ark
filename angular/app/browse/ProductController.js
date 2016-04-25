@@ -6,7 +6,7 @@
      */
     angular.module('app.controllers').controller('ProductController', ['$scope', '_', function($scope,_) {
 
-        $scope.filters = []
+        $scope.filters = [];
         //Done Through REST
         $scope.products =  [
             /* Dresses */
@@ -133,19 +133,43 @@
         //What We Manipulate During CI, will be all done through rest.
         $scope.results = $scope.products;
 
+        $scope.removeFilter = function(index) {
+            $scope.filters.splice(index,1);
+            console.log($scope.filters);
+            draft($scope.filters);
+        };
+
         $scope.addFilter = function(type, value) {
+            // Filter object to include
             var obj = {
                 type: type,
                 value: value
             };
-            console.log(obj);
-            console.log(_.filter($scope.results,[obj.type,obj.value]));
-            if(_.findIndex($scope.filters,obj) == -1) {
+
+            //If the filter was not included at all
+            if(_.findIndex($scope.filters, function(o) { return o.type == obj.type}) == -1) {
+                // Update the Results Accordingly
+                $scope.results = _.filter($scope.results,[obj.type,obj.value]);
                 $scope.filters.push(obj);
                 console.log($scope.filters);
             } else {
-                console.log('This filter has already been applied.')
+
+                var index = _.findIndex($scope.filters,[obj.type,obj.value]);
+
+                // Filter was a different one
+                if(index != -1)  {
+                    $scope.filters.splice(index,1,obj);
+                    draft($scope.filters);
+                }
             }
         };
+
+        function draft(array) {
+            var obj = {};
+            array.forEach(function(entry) {
+                obj[entry.type] = entry.value;
+            });
+            $scope.results = _.filter($scope.products, obj)
+        }
     }]);
 })();

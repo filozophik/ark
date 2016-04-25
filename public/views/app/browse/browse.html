@@ -1,10 +1,10 @@
 <main ng-controller="ProductController">
-    <div class="row">
+    <div class="row" style="margin:1rem 0 0.33rem">
         <div class="col s12">
             Currently Displaying:
             <div class="chip" ng-repeat="filter in filters">
                 {{ filter.type + ' : ' + filter.value }}
-                <i class="fa fa-times"></i>
+                <i class="fa fa-times" ng-click="removeFilter($index)"></i>
             </div>
 
         </div>
@@ -14,14 +14,14 @@
             <ul class="collapsible" data-collapsible="expandable">
                 <div class="main collapsible-header">Shop By Type</div>
                 <li>
-                    <div class="collapsible-header active">Tops</div>
+                    <div class="collapsible-header active" ng-click="addFilter('category','top')">Tops</div>
                     <div class="collapsible-body">
                         <ul class="collection">
-                            <li class="collection-item">T-Shirts</li>
-                            <li class="collection-item">Shirts</li>
-                            <li class="collection-item" ng-click="addFilter('category','top')">Tank Top</li>
-                            <li class="collection-item">Blouse</li>
-                            <li class="collection-item">Long Sleeve</li>
+                            <li class="collection-item" ng-click="addFilter('subcategory','t-shirt')">T-Shirts</li>
+                            <li class="collection-item" ng-click="addFilter('subcategory','shirt')">Shirts</li>
+                            <li class="collection-item" ng-click="addFilter('subcategory','tank-top')">Tank Top</li>
+                            <li class="collection-item" ng-click="addFilter('subcategory','blouse')">Blouse</li>
+                            <li class="collection-item" ng-click="addFilter('subcategory','long-sleeve')">Long Sleeve</li>
                         </ul>
                     </div>
                 </li>
@@ -51,7 +51,7 @@
             </ul>
         </div>
         <div class="col s12 l9">
-            <div class="col s6 m4 l3" ng-repeat="product in products">
+            <div class="col s6 m4 l3" ng-repeat="product in results" ng-show="results">
                 <div class="card medium">
                     <div class="card-image">
                         <img ng-src="{{ 'images/products/' + product.category + '/' + product.pictures[0] }}">
