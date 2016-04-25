@@ -4,8 +4,11 @@
     /**
      * Created by lofo on 11/04/16.
      */
-    angular.module('app.controllers').controller('ProductController', ['$scope', function($scope) {
-        $scope.products = [
+    angular.module('app.controllers').controller('ProductController', ['$scope', '_', function($scope,_) {
+
+        $scope.filters = []
+        //Done Through REST
+        $scope.products =  [
             /* Dresses */
             {
                 description:'Light Open Dress w/ Silk Bottom',
@@ -126,5 +129,23 @@
             /* Pants */
             /* Skirts*/
         ];
+
+        //What We Manipulate During CI, will be all done through rest.
+        $scope.results = $scope.products;
+
+        $scope.addFilter = function(type, value) {
+            var obj = {
+                type: type,
+                value: value
+            };
+            console.log(obj);
+            console.log(_.filter($scope.results,[obj.type,obj.value]));
+            if(_.findIndex($scope.filters,obj) == -1) {
+                $scope.filters.push(obj);
+                console.log($scope.filters);
+            } else {
+                console.log('This filter has already been applied.')
+            }
+        };
     }]);
 })();

@@ -12,7 +12,7 @@
             'app.directives',
             'app.routes',
             'app.config'
-        ]);
+        ]).constant('_',_);
 
     angular.module('app.routes', ['ui.router']);
     angular.module('app.controllers', ['ui.materialize','ui.router', 'restangular']);

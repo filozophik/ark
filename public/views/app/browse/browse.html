@@ -1,23 +1,12 @@
 <main ng-controller="ProductController">
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <div class="row">
-                <div class="col l4">
-                    <img src="images/dress/light_floral_01.gif">
-                </div>
-                <div class="col l8">
-                    <h4>Floral</h4>
-                    <h5 class="red-text">$24.95</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ultrices nisi sed venenatis maximus.
-                        Pellentesque laoreet, dui non laoreet porta, massa tortor scelerisque massa, at egestas nunc enim eget
-                        libero. Nullam at semper augue, a iaculis justo.</p>
-                    <p>Available colors:</p>
-                    <a class="btn right">Add to cart</a>
-                    <small>Shipping rates may apply. Please refer to the Terms And Conditions for purchasing policy.</small>
-                </div>
+    <div class="row">
+        <div class="col s12">
+            Currently Displaying:
+            <div class="chip" ng-repeat="filter in filters">
+                {{ filter.type + ' : ' + filter.value }}
+                <i class="fa fa-times"></i>
             </div>
-        </div>
-        <div class="modal-footer">
+
         </div>
     </div>
     <div class="row">
@@ -30,7 +19,7 @@
                         <ul class="collection">
                             <li class="collection-item">T-Shirts</li>
                             <li class="collection-item">Shirts</li>
-                            <li class="collection-item">Tank Top</li>
+                            <li class="collection-item" ng-click="addFilter('category','top')">Tank Top</li>
                             <li class="collection-item">Blouse</li>
                             <li class="collection-item">Long Sleeve</li>
                         </ul>
