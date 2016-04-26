@@ -13,7 +13,9 @@ var appJS = [
     'bower_components/lodash/lodash.js',
     'bower_components/angular-ui-router/release/angular-ui-router.js',
     'bower_components/restangular/dist/restangular.js',
-    'bower_components/angular-materialize/src/angular-materialize.js'
+    'bower_components/angular-materialize/src/angular-materialize.js',
+    'bower_components/slick-carousel/slick/slick.js',
+    'bower_components/angular-slick/dist/slick.js'
 ];
 var filter = require('gulp-filter');
 var notify = require('gulp-notify');

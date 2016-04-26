@@ -1,16 +1,15 @@
+/**
+ * Created by Benjamin on 4/27/2016.
+ */
 (function(){
     "use strict";
 
-    /**
-     * Created by lofo on 11/04/16.
-     */
-    angular.module('app.controllers').controller('ProductController', ['$scope', '_', function($scope,_) {
+    angular.module("app.services").factory('products', function(){
 
-        $scope.filters = [];
-        //Done Through REST
-        $scope.products =  [
+        var products =  [
             /* Dresses */
             {
+                id: 1,
                 description:'Light Open Dress w/ Silk Bottom',
                 category: 'dress',
                 subcategory: 'open',
@@ -23,6 +22,7 @@
                 ]
             },
             {
+                id: 2,
                 description:'Rose Floral Dress',
                 category: 'dress',
                 subcategory: 'cut',
@@ -35,6 +35,7 @@
                 ]
             },
             {
+                id: 3,
                 description:'Sakura Japanese Style Dress',
                 category: 'dress',
                 subcategory: 'full',
@@ -47,6 +48,7 @@
                 ]
             },
             {
+                id: 4,
                 description:'Tropics Style Dress w/ Shoestring Shoulders',
                 category: 'dress',
                 subcategory: 'full',
@@ -60,6 +62,7 @@
             },
             /* Tops */
             {
+                id: 5,
                 description:'Western Style Ponch Top',
                 category: 'top',
                 subcategory: 'cardigan',
@@ -71,6 +74,7 @@
                     '49_04.gif'
                 ]
             },{
+                id: 6,
                 description:'African Style Short Skirt Top w/ Shoestring Shoulders',
                 category: 'top',
                 subcategory: 'cardigan',
@@ -82,6 +86,7 @@
                     '49_09.gif'
                 ]
             },{
+                id: 7,
                 description:'Open Motif Beach Top',
                 category: 'top',
                 subcategory: 'beach',
@@ -93,6 +98,7 @@
                     '50_04.gif'
                 ]
             },{
+                id: 8,
                 description:'Light Blue Beach Top',
                 category: 'top',
                 subcategory: 'beach',
@@ -104,6 +110,7 @@
                     '50_07.gif'
                 ]
             },{
+                id: 9,
                 description:'African Neckstring Top',
                 category: 'top',
                 subcategory: 'skirt',
@@ -115,6 +122,7 @@
                     '51_04.gif'
                 ]
             },{
+                id: 10,
                 description:'Light Shoelace Silk Top',
                 category: 'top',
                 subcategory: 'cardigan',
@@ -130,46 +138,16 @@
             /* Skirts*/
         ];
 
-        //What We Manipulate During CI, will be all done through rest.
-        $scope.results = $scope.products;
+        return {
+            all: function() {
+                return products;
+            },
+            one: function(id) {
+                console.log(id);
+                console.log(_.find(products,function(o) { return o.id == id}));
 
-        $scope.removeFilter = function(index) {
-            $scope.filters.splice(index,1);
-            console.log($scope.filters);
-            draft($scope.filters);
-        };
-
-        $scope.addFilter = function(type, value) {
-            // Filter object to include
-            var obj = {
-                type: type,
-                value: value
-            };
-
-            //If the filter was not included at all
-            if(_.findIndex($scope.filters, function(o) { return o.type == obj.type}) == -1) {
-                // Update the Results Accordingly
-                $scope.results = _.filter($scope.results,[obj.type,obj.value]);
-                $scope.filters.push(obj);
-                console.log($scope.filters);
-            } else {
-
-                var index = _.findIndex($scope.filters,[obj.type,obj.value]);
-
-                // Filter was a different one
-                if(index != -1)  {
-                    $scope.filters.splice(index,1,obj);
-                    draft($scope.filters);
-                }
+                return _.find(products,function(o) {return o.id == id});
             }
         };
-
-        function draft(array) {
-            var obj = {};
-            array.forEach(function(entry) {
-                obj[entry.type] = entry.value;
-            });
-            $scope.results = _.filter($scope.products, obj)
-        }
-    }]);
+    });
 })();

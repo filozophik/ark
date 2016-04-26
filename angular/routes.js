@@ -27,7 +27,7 @@
                     }
                 }
             }).state('browse', {
-                url: '/browse',
+                url: '/browse/{endpoint}',
                 views: {
                     header: {
                         templateUrl: getView('shopping-header')
@@ -37,16 +37,18 @@
                     }
                 }
             }).state('product', {
-                url: '/product',
+                url: '/product/:id',
                 views: {
                     header: {
                         templateUrl: getView('shopping-header')
                     },
                     main: {
                         templateUrl: getView('product')
+                    },
+                    footer: {
+                        templateUrl: getView('footer')
                     }
                 }
             });
-
     });
 })();

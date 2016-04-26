@@ -1,47 +1,70 @@
-<main class="z-depth-1 container">
+<main ng-controller="ProductController" class="z-depth-1 large-container">
     <div class="row" style="padding: 10px;">
-        <div class="col s12">
-            <a href="#!" class="breadcrumb">Women</a>
-            <a href="#!" class="breadcrumb">Tops</a>
-            <a href="#!" class="breadcrumb">Cardigan</a>
-            <a href="#!" class="breadcrumb">Western Style Poncho Top</a>
+        <div class="col s12 offset-l1 l10">
+            <a href="#!" class="breadcrumb">{{item.gender == 'F' ? 'women' : 'men' }}</a>
+            <a href="#!" class="breadcrumb">{{item.category}}</a>
+            <a href="#!" class="breadcrumb">{{item.subcategory}}</a>
+            <a href="#!" class="breadcrumb">{{item.description}}</a>
         </div>
     </div>
-    <div class="col s12 l9">
-        <div class="row">
-            <div class="col l4 center">
-                <img src="/images/products/top/49_03.gif">
+    <div class="row">
+        <div class="col s12">
+            <div class="col s12 m6 product-picture">
+                <slick>
+                    <div ng-repeat="picture in item.pictures"><img ng-src="images/products/{{item.category}}/{{picture}}"></div>
+                </slick>
             </div>
-            <div class="col l8">
-                <h5>Western Style Poncho Top</h5>
-                <h3 class="red-text">$13.00</h3>
-                <a class="red waves-effect btn-large">Add to cart</a>
-                <form action="#">
-                    <label>Sizes Available:</label>
-                    <span>
-                        <input name="group1" type="radio" id="test1" />
-                        <label for="test1">XS</label>
-                    </span>
-                    <span>
-                        <input name="group1" type="radio" id="test2" />
-                        <label for="test2">S</label>
-                    </span>
-                    <span>
-                        <input class="with-gap" name="group1" type="radio" id="test3"  />
-                        <label for="test3">M</label>
-                    </span>
-                </form>
+            <div class="col s12 m6">
+                <h5>{{ item.description }}</h5>
+                <h3 class="red-text">{{ item.price | currency }}</h3>
 
-                <small>Shipping rates may apply. Please refer to the Terms And Conditions for purchasing policy.</small>
-                <div class="row">
-                    <a class="fb-share-button" data-href="http://ark.app/#!/product" data-layout="button" data-mobile-iframe="true"></a>
+                <form action="#">
+                    <div>
+                        <label>Size:</label>
+                    <span>
+                        <input name="size" type="radio" id="test1" />
+                        <label class="cust" for="test1">XS</label>
+                    </span>
+                    <span>
+                        <input name="size" type="radio" id="test2" />
+                        <label class="cust" for="test2">S</label>
+                    </span>
+                    <span>
+                        <input name="size" type="radio" id="test3"  />
+                        <label class="cust" for="test3">M</label>
+                    </span>
+                    </div><br>
+                    <div>
+                    <label>Color:</label>
+                        <span ng-repeat="color in colors">
+                            <input name="color" type="radio" id="test4" />
+                            <label ng-class="cust {{ color }}" for="test4"></label>
+                        </span>
+                    </div>
+                    <label>Quantity</label>
+                    <select class="browser-default">
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="1">100 @ 3.50 / unit</option>
+                        <option value="2">200 @ 3.00 / unit</option>
+                        <option value="3">300 @ 2.50 / unit</option>
+                    </select>
+                </form>
+                <div class="center-on-small-only">
+                    <a class="red waves-effect btn-large">Add to cart</a>
+                </div>
+                <div>
+                    <small>Shipping rates may apply. Please refer to the Terms And Conditions for purchasing policy.</small>
+                </div>
+                <div>
+                    <a class="fb-share-button" data-href="http://ark.app/#!/product" data-layout="button" data-mobile-iframe="true" style="top:-6px"></a>
                     <a href="https://twitter.com/share" class="twitter-share-button" data-via="lamungu">Tweet</a>
                 </div>
             </div>
         </div>
-    </div><hr class="container">
+    </div>
+    <hr class="container">
     <div class="section row">
-        <div class="col offset-s1 s12">
+        <div class="col offset-s1 s10">
             <p>
                 Specification<br>
                 Color: BEIGE, PURPLISH BLUE<br>
@@ -64,9 +87,71 @@
     </div>
     <hr class="container">
     <div class="section row">
-        <div class="col offset-s1 s12">
-            <h3>Other Tops You Might Like</h3>
-            <div></div>
+        <div class="col s12 offset-l1 l10">
+            <h4 style="font-weight:300">Other Tops You Might Like</h4>
+
+            <div class="col {{ $index == 0 ? 'offset-l1' : '' }} {{ $index == 2 ? 'hide-on-small-only' : '' }} {{ $index >= 3 ? 'hide-on-med-and-down' : ''}} s6 m4 l2" ng-repeat="product in related">
+                <div class="card">
+                    <div class="card-image">
+                        <img ng-src="{{ 'images/products/' + product.category + '/' + product.pictures[0] }}">
+                    </div>
+                    <div class="card-action right-align">
+                        <span class="">{{ product.price | currency }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="container">
+    <div class="section row">
+        <div class="col s12 offset-l1 l10">
+            <h4 style="font-weight:300">Reviews</h4>
+            <div class="center">
+                Coming Soon!
+            </div>
+        </div>
+    </div>
+    <hr class="container">
+    <div class="section row">
+        <div class="col s12 offset-l1 l10">
+            <h4 style="font-weight:300">Wholesale Information</h4>
+            <div class="center">
+                If you would like to have more information on bigger bulk deals from our part,
+                leave us your contact information below, and we would be glad to contact you as soon as we can.
+            </div>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12 l6">
+                            <input id="name" type="text" class="validate">
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="input-field col s12 l6">
+                            <input id="company" type="text" class="validate">
+                            <label for="company">Company</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="email" type="email" class="validate">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="phone" type="text" class="validate">
+                            <label for="phone">Phone</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="country" type="text" class="validate">
+                            <label for="country">Country</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label for="message">Message</label>
+                            <textarea id="message" type="message" class="materialize-textarea validate"></textarea>
+                        </div>
+                    </div>
+                    <input type="submit" class="btn">
+                </form>
+            </div>
         </div>
     </div>
 </main>

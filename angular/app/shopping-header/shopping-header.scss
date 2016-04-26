@@ -7,6 +7,13 @@
     position: relative;
   }
 }
+.search-wrapper {
+    width:400px;
+  @media screen and (max-width:1210px) {
+    width:200px;
+  }
+}
+
 .collapsible {
   .collapsible-header {
     font-weight: 500;

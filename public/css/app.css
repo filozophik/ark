@@ -1,3 +1,12 @@
+.red.lighten {
+  background-color: #EF6979 !important; }
+
+/* Main Nav Logo */
+nav {
+  background-color: white; }
+  nav ul a, nav .brand-logo {
+    color: #444; }
+
 p {
   line-height: 2rem; }
 
@@ -16,29 +25,49 @@ p {
   border-radius: 10px;
   padding: 1.5rem; }
 
-/* Main Nav Logo */
-nav {
-  background-color: white; }
-  nav ul a, nav .brand-logo {
-    color: #444; }
+.product-picture {
+  text-align: center; }
+  .product-picture img {
+    max-width: 100%;
+    margin: 0 auto; }
 
-nav .brand-logo {
-  padding: 0 1rem; }
+.breadcrumb {
+  font-weight: 300; }
 
-li .brand-logo {
-  position: relative; }
+input[type=range] + .thumb.active .value {
+  margin-top: 0 !important; }
 
-.collapsible .collapsible-header {
-  font-weight: 500; }
+.browser-default {
+  max-width: 400px;
+  margin-bottom: 1rem; }
 
-.collapsible .main {
-  border-bottom: solid 2px #bbb6b6;
-  font-weight: 300;
-  font-size: 1.4rem; }
+.slick-prev:before, .slick-next:before {
+  font-family: FontAwesome;
+  color: black; }
 
-.collapsible ul {
-  color: #999;
-  font-size: 0.9rem; }
+.slick-prev {
+  left: 0; }
+  .slick-prev:before {
+    content: '\f0a8'; }
+
+.slick-next {
+  right: 0; }
+  .slick-next:before {
+    content: '\f0a9'; }
+
+.cust {
+  border: solid 1px;
+  vertical-align: middle;
+  min-width: 47px;
+  height: auto !important;
+  min-height: 30px;
+  text-align: center;
+  padding-left: 0 !important;
+  padding: 10px !important; }
+  .cust:before, .cust:after {
+    display: none; }
+  [type="radio"]:checked + .cust {
+    border: solid 2px blue; }
 
 /* Custom Stylesheet */
 /**
@@ -64,5 +93,35 @@ nav {
     vertical-align: middle; }
   .breadcrumb:last-child {
     color: #f44336; }
+
+@media screen and (min-width: 993px) {
+  .large-container {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 70%; } }
+
+nav .brand-logo {
+  padding: 0 1rem; }
+
+li .brand-logo {
+  position: relative; }
+
+.search-wrapper {
+  width: 400px; }
+  @media screen and (max-width: 1210px) {
+    .search-wrapper {
+      width: 200px; } }
+
+.collapsible .collapsible-header {
+  font-weight: 500; }
+
+.collapsible .main {
+  border-bottom: solid 2px #bbb6b6;
+  font-weight: 300;
+  font-size: 1.4rem; }
+
+.collapsible ul {
+  color: #999;
+  font-size: 0.9rem; }
 
 /*# sourceMappingURL=app.css.map */

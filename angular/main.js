@@ -15,7 +15,7 @@
         ]).constant('_',_);
 
     angular.module('app.routes', ['ui.router']);
-    angular.module('app.controllers', ['ui.materialize','ui.router', 'restangular']);
+    angular.module('app.controllers', ['ui.materialize','ui.router', 'slick', 'restangular']);
     angular.module('app.filters', []);
     angular.module('app.services', []);
     angular.module('app.directives', []);

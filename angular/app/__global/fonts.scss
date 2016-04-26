@@ -29,3 +29,10 @@ nav {
     color: #f44336;
   }
 }
+@media screen and (min-width:993px) {
+  .large-container {
+    margin: 0 auto;
+    max-width: 1280px;
+    width:70%;
+  }
+}
