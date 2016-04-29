@@ -1,0 +1,44 @@
+
+<blockquote ng-show="ngCart.getTotalItems() === 0">
+    Your cart is empty
+</blockquote>
+
+<div ng-show="ngCart.getTotalItems() > 0">
+    <div class="row">
+    <p class="left">Review your purchase before continuing</p>
+    <p class="right">{{ ngCart.getTotalItems() }} total items</p>
+    </div><hr>
+    <div class="row section" ng-repeat="item in ngCart.getCart().items track by $index">
+        <i style="position:absolute" ng-click="ngCart.removeItemById(item.getId())" class="fa fa-times"></i>
+        <div class="col s4 center"><img style="max-height:100px" ng-src="/images/products/{{ item.getData().category }}/{{ item.getData().pictures[0] }}"></div>
+        <div class="col s8">
+            <h5 ui-sref="product({id: item.getData().id})">{{ item.getName() }}</h5>
+            <div>Size: XS</div>
+            <div>Color: Blue</div>
+            <div class="left">Quantity: <span class="fa fa-minus" ng-class="{'disabled':item.getQuantity()==1}"
+                      ng-click="item.setQuantity(-1, true)"></span>&nbsp;&nbsp;
+                {{ item.getQuantity() | number }}&nbsp;&nbsp;
+                <span class="fa fa-plus" ng-click="item.setQuantity(1, true)"></span><br>
+                {{ item.getPrice() | currency}}</div>
+            <h5 class="red-text right">{{ item.getTotal() | currency }}</h5>
+        </div>
+    </div><hr>
+    <div class="row">
+        <div class="ngCart cart">
+            <p class="left" style="margin-right:1rem"><b>Tax (7.5%):</b> 144.00$</p>
+            <p class="left"><b>Shipping:</b> 500$</p>
+            <h4 class="right"><small>Total:</small>{{ ngCart.totalCost() | currency }}</h4>
+        </div>
+    </div>
+    <div class="row">
+        <a href="#" class="right btn">Proceed with Quote</a>
+    </div>
+</div>
+<style>
+    .ngCart.cart span[ng-click] {
+        cursor: pointer;
+    }
+    .ngCart.cart {
+        color:#aaa;
+    }
+</style>

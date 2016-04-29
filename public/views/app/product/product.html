@@ -50,7 +50,7 @@
                     </select>
                 </form>
                 <div class="center-on-small-only">
-                    <a class="red waves-effect btn-large">Add to cart</a>
+                    <ngcart-addtocart id="{{ item.id }}" name="{{ item.description }}" price="{{ item.price }}" size="" color="" shipping="" quantity="100" quantity-max="300" data="item">Add To Cart</ngcart-addtocart>
                 </div>
                 <div>
                     <small>Shipping rates may apply. Please refer to the Terms And Conditions for purchasing policy.</small>

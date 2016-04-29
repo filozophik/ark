@@ -144,9 +144,8 @@
             },
             one: function(id) {
                 console.log(id);
-                console.log(_.find(products,function(o) { return o.id == id}));
-
-                return _.find(products,function(o) {return o.id == id});
+                console.log(_.find(products,function(o) { return o.id == id;}));
+                return _.find(products,function(o) {return o.id == id;});
             }
         };
     });

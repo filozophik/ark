@@ -17,7 +17,7 @@
                 url: '/',
                 views: {
                     header: {
-                        templateUrl: getView('header')
+                        templateUrl: getView('shopping-header')
                     },
                     main: {
                         templateUrl: getView('landing')
@@ -49,6 +49,19 @@
                         templateUrl: getView('footer')
                     }
                 }
-            });
+            }).state('cart', {
+                url:'/cart',
+                views: {
+                    header: {
+                        templateUrl:getView('shopping-header')
+                    },
+                    main: {
+                        templateUrl: getView('cart')
+                    },
+                    footer: {
+                        templateUrl:getView('footer')
+                    }
+                }
+        });
     });
 })();

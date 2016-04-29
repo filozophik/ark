@@ -1,16 +1,20 @@
 
 .brand-logo {
+  img {
+    height:40px; padding: 0 6px; vertical-align: middle
+  }
   nav & {
     padding: 0 1rem;
-  }
-  li & {
-    position: relative;
   }
 }
 .search-wrapper {
     width:400px;
   @media screen and (max-width:1210px) {
     width:200px;
+  }
+  .side-nav & {
+    padding: 0 15px;
+    width: 100%;
   }
 }
 

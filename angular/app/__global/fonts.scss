@@ -36,3 +36,13 @@ nav {
     width:70%;
   }
 }
+
+.medium-down-container {
+  @media screen and (max-width:992px) {
+    margin: 0 auto;
+    width: 85%;
+  }
+  @media screen and (max-width:600px) {
+    width: 90%;
+  }
+}

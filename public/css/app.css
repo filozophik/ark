@@ -32,6 +32,7 @@ p {
     margin: 0 auto; }
 
 .breadcrumb {
+  text-transform: capitalize;
   font-weight: 300; }
 
 input[type=range] + .thumb.active .value {
@@ -69,6 +70,35 @@ input[type=range] + .thumb.active .value {
   [type="radio"]:checked + .cust {
     border: solid 2px blue; }
 
+.brand-logo img {
+  height: 40px;
+  padding: 0 6px;
+  vertical-align: middle; }
+
+nav .brand-logo {
+  padding: 0 1rem; }
+
+.search-wrapper {
+  width: 400px; }
+  @media screen and (max-width: 1210px) {
+    .search-wrapper {
+      width: 200px; } }
+  .side-nav .search-wrapper {
+    padding: 0 15px;
+    width: 100%; }
+
+.collapsible .collapsible-header {
+  font-weight: 500; }
+
+.collapsible .main {
+  border-bottom: solid 2px #bbb6b6;
+  font-weight: 300;
+  font-size: 1.4rem; }
+
+.collapsible ul {
+  color: #999;
+  font-size: 0.9rem; }
+
 /* Custom Stylesheet */
 /**
 * Use this file to override Materialize files so you can update
@@ -100,28 +130,13 @@ nav {
     max-width: 1280px;
     width: 70%; } }
 
-nav .brand-logo {
-  padding: 0 1rem; }
+@media screen and (max-width: 992px) {
+  .medium-down-container {
+    margin: 0 auto;
+    width: 85%; } }
 
-li .brand-logo {
-  position: relative; }
-
-.search-wrapper {
-  width: 400px; }
-  @media screen and (max-width: 1210px) {
-    .search-wrapper {
-      width: 200px; } }
-
-.collapsible .collapsible-header {
-  font-weight: 500; }
-
-.collapsible .main {
-  border-bottom: solid 2px #bbb6b6;
-  font-weight: 300;
-  font-size: 1.4rem; }
-
-.collapsible ul {
-  color: #999;
-  font-size: 0.9rem; }
+@media screen and (max-width: 600px) {
+  .medium-down-container {
+    width: 90%; } }
 
 /*# sourceMappingURL=app.css.map */

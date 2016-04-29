@@ -15,7 +15,8 @@ var appJS = [
     'bower_components/restangular/dist/restangular.js',
     'bower_components/angular-materialize/src/angular-materialize.js',
     'bower_components/slick-carousel/slick/slick.js',
-    'bower_components/angular-slick/dist/slick.js'
+    'bower_components/angular-slick/dist/slick.js',
+    'bower_components/ngCart/dist/ngCart.js'
 ];
 var filter = require('gulp-filter');
 var notify = require('gulp-notify');
