@@ -1,3 +1,37 @@
 .red.lighten {
   background-color:#EF6979 !important;
 }
+.card.browse {
+  .card-image {
+    height:12rem;
+    overflow:hidden;
+  }
+/*
+    height:400px;
+
+    .card-image {
+      max-height:60%;
+      overflow:hidden;
+    }
+    .card-content {
+      max-height:40%;
+      overflow:hidden;
+    }
+    .card-action {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+    @media screen and (max-width:600px) {
+      height:250px;
+
+      .card-image {
+        max-height:75%;
+      }
+      .card-content {
+        max-height:25%;
+      }
+    }
+    */
+}
