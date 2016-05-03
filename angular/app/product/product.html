@@ -10,8 +10,8 @@
     <div class="row">
         <div class="col s12">
             <div class="col s12 m6 product-picture">
-                <slick>
-                    <div ng-repeat="picture in item.pictures"><img ng-src="images/products/{{item.category}}/{{picture}}"></div>
+                <slick init-onload=true data="item">
+                    <div ng-repeat="picture in item.pictures"><img ng-src="/products/{{item.gender}}/{{picture}}"></div>
                 </slick>
             </div>
             <div class="col s12 m6">
@@ -88,7 +88,7 @@
     <hr class="container">
     <div class="section row">
         <div class="col s12 offset-l1 l10">
-            <h4 style="font-weight:300">Other Tops You Might Like</h4>
+            <h4 style="font-weight:300">Other {{item.subcategory}} you might like:</h4>
 
             <div class="col {{ $index == 0 ? 'offset-l1' : '' }} {{ $index == 2 ? 'hide-on-small-only' : '' }} {{ $index >= 3 ? 'hide-on-med-and-down' : ''}} s6 m4 l2" ng-repeat="product in related">
                 <div class="card">

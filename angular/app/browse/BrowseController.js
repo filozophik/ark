@@ -8,11 +8,15 @@
 
         $scope.filters = [];
         //Done Through REST
-        console.log($stateParams.endpoint);
-        $scope.products = products.all();
+        products.all().getList().then(function(resolve) {
+            $scope.products = resolve;
+            $scope.results = $scope.products;
+        }, function(reject) {
+            console.log(reject);
+        });
 
         //What We Manipulate During CI, will be all done through rest.
-        $scope.results = $scope.products;
+
 
         $scope.removeFilter = function(index) {
             $scope.filters.splice(index,1);
@@ -26,7 +30,7 @@
                 type: type,
                 value: value
             };
-            var index = _.findIndex($scope.filters, function(o) { return o.type == obj.type});
+            var index = _.findIndex($scope.filters, function(o) { return o.type == obj.type;});
             // If the filter was not included at all
             if(index == -1) {
                 // Update the Results Accordingly
@@ -45,7 +49,7 @@
             array.forEach(function(entry) {
                 obj[entry.type] = entry.value;
             });
-            $scope.results = _.filter($scope.products, obj)
+            $scope.results = _.filter($scope.products, obj);
         }
     }]);
 })();

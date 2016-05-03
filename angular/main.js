@@ -20,5 +20,8 @@
     angular.module('app.services', []);
     angular.module('app.directives', []);
     angular.module('app.config', []);
+    app.config(function(RestangularProvider) {
+        RestangularProvider.setBaseUrl('/api/v1');
+    });
 
 })();

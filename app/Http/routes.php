@@ -13,4 +13,11 @@
 
 Route::get('/', 'AngularController@serveApp');
 Route::get('/unsupported-browser', 'AngularController@unsupported');
-Route::get('/data', 'DataController@index');
+Route::controller('admin', 'AdminController');
+
+Route::controller('admin', 'AdminController');
+
+Route::group(['prefix' => 'api/v1','middleware'=>'api'], function() {
+    Route::resource('category','Api\CategoryController');
+    Route::resource('products','Api\ProductController');
+});
