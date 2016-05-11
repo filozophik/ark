@@ -4,7 +4,7 @@
 (function() {
     "use strict";
 
-    angular.module("app.services").factory('products', function () {
+    angular.module("app.services").factory('categories', ['Restangular', function (Restangular) {
 
-    });
+    }]);
 })();
