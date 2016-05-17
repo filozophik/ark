@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Ark\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
+use Ark\Http\Requests;
 
 class DataController extends Controller
 {

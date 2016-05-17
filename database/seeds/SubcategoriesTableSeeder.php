@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\Subcategory;
-use App\Models\Category;
+use Ark\Models\Subcategory;
+use Ark\Models\Category;
 
 class SubcategoriesTableSeeder extends Seeder
 {

@@ -151,10 +151,10 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Ark\Providers\AppServiceProvider::class,
+        Ark\Providers\AuthServiceProvider::class,
+        Ark\Providers\EventServiceProvider::class,
+        Ark\Providers\RouteServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
 
     ],

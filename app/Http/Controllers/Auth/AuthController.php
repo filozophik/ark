@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace Ark\Http\Controllers\Auth;
 
-use App\User;
+use Ark\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use Ark\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

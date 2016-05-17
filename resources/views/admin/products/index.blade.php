@@ -65,11 +65,11 @@
         </fieldset>
         <fieldset class="form-group  col-sm-6">
             <label for="price">Price</label>
-            <input type="text" class="form-control" id="price" placeholder="Price">
+            <input type="text" class="form-control" name="price" id="price" placeholder="Price">
         </fieldset>
         <fieldset class="form-group  col-sm-6">
             <label for="clearance">Clearance Price</label>
-            <input type="text" class="form-control" id="clearance" placeholder="Clearance Price">
+            <input type="text" class="form-control" id="clearance" name="clearance" placeholder="Clearance Price">
         </fieldset>
         <fieldset class="form-group  col-sm-12">
             <label for="pictures">Pictures</label>

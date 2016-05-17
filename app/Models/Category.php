@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace Ark\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,7 +12,7 @@ class Category extends Model
 
     public function subcategories()
     {
-        return $this->hasMany('App\Models\Subcategory');
+        return $this->hasMany('Ark\Models\Subcategory');
     }
 
 }

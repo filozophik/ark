@@ -21,8 +21,10 @@ class CreateProductsTable extends Migration
             $table->string('gender');
             $table->string('pictures');
             $table->string('colors');
+            $table->text('specifications');
             $table->double('price',6,2);
             $table->double('clearance',6,2);
+            $table->timestamps();
         });
 
         Schema::table('products', function ($table) {

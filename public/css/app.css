@@ -1,39 +1,3 @@
-.red.lighten {
-  background-color: #EF6979 !important; }
-
-.card.browse {
-  /*
-    height:400px;
-
-    .card-image {
-      max-height:60%;
-      overflow:hidden;
-    }
-    .card-content {
-      max-height:40%;
-      overflow:hidden;
-    }
-    .card-action {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      left: 0;
-    }
-    @media screen and (max-width:600px) {
-      height:250px;
-
-      .card-image {
-        max-height:75%;
-      }
-      .card-content {
-        max-height:25%;
-      }
-    }
-    */ }
-  .card.browse .card-image {
-    height: 12rem;
-    overflow: hidden; }
-
 /* Custom Stylesheet */
 /**
 * Use this file to override Materialize files so you can update
@@ -73,6 +37,42 @@ nav {
 @media screen and (max-width: 600px) {
   .medium-down-container {
     width: 90%; } }
+
+.red.lighten {
+  background-color: #EF6979 !important; }
+
+.card.browse {
+  /*
+    height:400px;
+
+    .card-image {
+      max-height:60%;
+      overflow:hidden;
+    }
+    .card-content {
+      max-height:40%;
+      overflow:hidden;
+    }
+    .card-action {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+    @media screen and (max-width:600px) {
+      height:250px;
+
+      .card-image {
+        max-height:75%;
+      }
+      .card-content {
+        max-height:25%;
+      }
+    }
+    */ }
+  .card.browse .card-image {
+    height: 12rem;
+    overflow: hidden; }
 
 body {
   display: -webkit-flex;
