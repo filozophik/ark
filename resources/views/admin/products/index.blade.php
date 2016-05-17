@@ -14,7 +14,8 @@
 <body>
 
 <div class="col-xs-12 col-sm-offset-2 col-sm-8">
-    <form>
+    <form method="post" enctype="multipart/form-data">
+        {{csrf_field()}}
         <fieldset class="form-group col-sm-12">
             <label for="description">Description</label>
             <input type="text" class="form-control" id="description" name="description" placeholder="Enter description">
@@ -48,12 +49,14 @@
         </fieldset>
         <fieldset class="form-group col-sm-12">
             <label for="colors">Colors</label>
-            <select multiple class="form-control" id="colors" name="colors">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+            <select multiple class="form-control" id="colors" name="colors[]">
+                <option>Blue</option>
+                <option>Red</option>
+                <option>Yellow</option>
+                <option>Green</option>
+                <option>Pink</option>
+                <option>Black</option>
+                <option>White</option>
             </select>
         </fieldset>
         <fieldset class="form-group col-sm-12">
@@ -70,13 +73,13 @@
         </fieldset>
         <fieldset class="form-group  col-sm-12">
             <label for="pictures">Pictures</label>
-            <input type="file" name="pictures" class="form-control-file" id="pictures">
+            <input type="file" name="pictures[]" class="form-control-file" id="pictures" multiple>
             <small class="text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
         </fieldset>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
+<script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script type="text/javascript">
     var categories;
@@ -90,16 +93,14 @@
         });
     });
 
-
-
     $('#gender input').on('change', function() {
         gender = $('input[name=gender]:checked', '#gender').val();
         var prefix = (gender == 'M') ? "Men's " : "Women's ";
         var options = $("#category");
         options.find('option').remove().end();
         $("#subcategory").find('option').remove().end().append($("<option />").text("Select a Category First"));
-        $.each(Object.keys(categories[gender]), function() {
-            options.append($("<option />").val(this).text(prefix + this));
+        $.each(categories[gender], function() {
+            options.append($("<option />").val(this.id).text(prefix + this.name));
         });
     });
 
@@ -107,8 +108,8 @@
         category = $('#category option:selected').val();
         var options = $("#subcategory");
         options.find('option').remove().end();
-        $.each(categories[gender][category], function() {
-            options.append($("<option />").val(this).text(this));
+        $.each(categories[gender][category]['subcategories'], function() {
+            options.append($("<option />").val(this.id).text(this.name));
         });
     });
 

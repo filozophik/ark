@@ -16,10 +16,14 @@ class CategoryController extends Controller
         );
         $categories = Category::all();
         foreach($categories as $category) {
-            $query[$category->gender][$category->name] = [];
+            $query[$category->gender][$category->id] = [
+                'id'=>$category->id,
+                'name'=>$category->name,
+                'subcategories' => []
+            ];
 
             foreach($category->subcategories as $subcategory) {
-                array_push($query[$category->gender][$category->name],$subcategory->name);
+                array_push($query[$category->gender][$category->id]['subcategories'],['id'=>$subcategory->id,'name'=>$subcategory->name]);
             }
         }
         return response()->json($query);
