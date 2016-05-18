@@ -38,13 +38,13 @@
         <fieldset class="form-group col-sm-6">
             <label for="category">Choose the Category</label>
             <select class="form-control" id="category" name="category">
-                <option>Select a Gender First</option>
+                <option>Gender required</option>
             </select>
         </fieldset>
         <fieldset class="form-group col-sm-6">
             <label for="subcategory">Subcategory</label>
             <select class="form-control" id="subcategory" name="subcategory">
-                <option>Select a Category First</option>
+                <option>Category required</option>
             </select>
         </fieldset>
         <fieldset class="form-group col-sm-12">
@@ -97,8 +97,8 @@
         gender = $('input[name=gender]:checked', '#gender').val();
         var prefix = (gender == 'M') ? "Men's " : "Women's ";
         var options = $("#category");
-        options.find('option').remove().end();
-        $("#subcategory").find('option').remove().end().append($("<option />").text("Select a Category First"));
+        options.find('option').remove().end().append($("<option />").text("Choose category"));
+        $("#subcategory").find('option').remove().end().append($("<option />").text("Category required."));
         $.each(categories[gender], function() {
             options.append($("<option />").val(this.id).text(prefix + this.name));
         });
@@ -107,7 +107,7 @@
     $('#category').on('change', function() {
         category = $('#category option:selected').val();
         var options = $("#subcategory");
-        options.find('option').remove().end();
+        options.find('option').remove().end().append($("<option />").text("Choose subcategory"));
         $.each(categories[gender][category]['subcategories'], function() {
             options.append($("<option />").val(this.id).text(this.name));
         });

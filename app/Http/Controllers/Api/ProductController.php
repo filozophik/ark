@@ -1,17 +1,24 @@
 <?php
 
-namespace Ark\Http\Controllers;
+namespace Ark\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use Ark\Models\Product;
 use Ark\Http\Requests;
+use Ark\Http\Controllers\Controller;
 use Intervention\Image\Facades\Image;
 
 class ProductController extends Controller
 {
+
+    protected $product;
+    public function __construct(Product $product) {
+        $this->product = $product;
+    }
     //
     public function index() {
-        return view('admin.products.index');
+        $products = $this->product->list();
+        return response()->json($products);
     }
 
     public function store(Request $request) {

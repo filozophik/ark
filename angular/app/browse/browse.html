@@ -54,7 +54,7 @@
             <div class="col s6 m4 l3" ng-repeat="product in results" ng-show="results">
                 <div ui-sref="product({id: product.id})" class="card browse">
                     <div class="card-image">
-                        <img ng-src="{{ 'images/products/' + product.category + '/' + product.pictures[0] }}">
+                        <img ng-src="{{ 'products/' + product.gender + '/' + product.pictures[0] }}">
                     </div>
                     <div class="card-content hide-on-small-only">
                         <p class="truncate">{{ product.description }}</p>
