@@ -157,7 +157,6 @@ return [
         Ark\Providers\RouteServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class
-
     ],
 
     /*
