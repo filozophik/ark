@@ -8,13 +8,29 @@ use Illuminate\Support\Facades\DB;
 class Product extends Model {
     //
    protected $products;
-    protected $guarded = ['id'];
+
+   protected $fillable = [
+        'description',
+        'gender',
+        'category_id',
+        'subcategory_id',
+        'colors',
+        'specifications',
+        'price',
+        'clearance',
+        'updated_at',
+        'created_at'
+    ];
 
     public function __construct()
     {
         $this->products =  DB::table('products')
         ->join('categories','products.category_id','=','categories.id')
-        ->join('subcategories','products.subcategory_id','=','subcategories.id');
+        ->join('subcategories','products.subcategory_id','=','subcategories.id')
+        ->select([
+        'categories.name as category','subcategories.name as subcategory',
+        'products.id','description','products.gender','pictures','colors',
+        'specifications','price','clearance']);
     }
 
     public function category() {
@@ -24,22 +40,15 @@ class Product extends Model {
         return $this->hasOne('Ark\Models\Subcategory');
     }
     public function list() {
-        $products = $this->products->select([
-            'products.id',
-            'categories.name as category',
-            'subcategories.name as subcategory',
-            'description',
-            'products.gender',
-            'pictures',
-            'colors',
-            'specifications',
-            'price',
-            'clearance'
-        ])->get();
+        $products = $this->products->get();
         foreach ($products as $product) {
             $product->pictures = explode(',',$product->pictures);
             $product->colors = explode(',',$product->colors);
         }
         return $products;
+    }
+    public function one($id) {
+        $product = $this->products->where('products.id','=',$id)->get();
+        return $product;
     }
 }

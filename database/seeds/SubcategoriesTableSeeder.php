@@ -24,8 +24,8 @@ class SubcategoriesTableSeeder extends Seeder
                 'Polos'
             ],
             'Shirts' => [
-                'Long Sleeve',
-                'Short Sleeve',
+                'Long Sleeves',
+                'Short Sleeves',
             ],
             'Bottoms' => [
                 'Pants',
@@ -83,7 +83,8 @@ class SubcategoriesTableSeeder extends Seeder
             ],
             'Swimwear' => [
                 'Bikinis',
-                'One Piece',
+                'One Pieces',
+                'Cover Ups'
             ],
             'Outerwear' => [
                 'Waistcoats',
