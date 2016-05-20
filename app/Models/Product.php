@@ -42,13 +42,19 @@ class Product extends Model {
     public function list() {
         $products = $this->products->get();
         foreach ($products as $product) {
-            $product->pictures = explode(',',$product->pictures);
-            $product->colors = explode(',',$product->colors);
+            $this->format($product);
         }
         return $products;
     }
     public function one($id) {
-        $product = $this->products->where('products.id','=',$id)->get();
+        $product = $this->products->where('products.id','=',$id)->first();
+
+        $this->format($product);
+
         return $product;
+    }
+    public static function format($product) {
+        $product->pictures = explode(',',$product->pictures);
+        $product->colors = explode(',',$product->colors);
     }
 }

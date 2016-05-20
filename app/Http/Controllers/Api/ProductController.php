@@ -26,6 +26,19 @@ class ProductController extends Controller
     public function show($id) {
         return response()->json($this->product->one($id));
     }
+    public function update($id, Request $request) {
+        $product = Product::find($id);
+        $product->description = $request->description;
+        $product->gender = $request->gender;
+        $product->category_id = $request->category;
+        $product->subcategory_id = $request->subcategory;
+        $product->colors = implode(',', $request->colors);
+        $product->specifications = nl2br($request->specs);
+        $product->price = $request->price;
+        $product->clearance = $request->clearance;
+        $product->save();
+        return response()->json(['status'=>'OK','product'=>$product]);
+    }
     public function store(Request $request) {
 
         $product_pics = [];
@@ -54,6 +67,6 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect('product');
+        return response()->json(['status'=>'OK','product'=>$product]);
     }
 }
