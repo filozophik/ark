@@ -30,6 +30,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \Ark\Http\Middleware\VerifyCsrfToken::class,
         ],
+        'jwt.auth' => [\Tymon\JWTAuth\Middleware\GetUserFromToken::class],
 
         'api' => [
             'throttle:60,1',

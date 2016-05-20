@@ -8,6 +8,7 @@ use Ark\Http\Requests;
 use Ark\Http\Controllers\Controller;
 use Intervention\Image\Facades\Image;
 
+
 class ProductController extends Controller
 {
 
@@ -26,16 +27,17 @@ class ProductController extends Controller
     public function show($id) {
         return response()->json($this->product->one($id));
     }
+
     public function destroy($id) {
         $product = Product::find($id);
         $pictures = explode(',',$product->pictures);
         foreach ($pictures as $picture) {
-            File::delete(public_path("/products/{$product->gender}/{$picture}"));
+            \File::delete(public_path("/products/{$product->gender}/{$picture}"));
         }
         $product->delete();
-
         return response()->json(['status'=>'OK','product'=>$product]);
     }
+
     public function update($id, Request $request) {
         $product = Product::find($id);
         $product->description = $request->description;
@@ -49,6 +51,7 @@ class ProductController extends Controller
         $product->save();
         return response()->json(['status'=>'OK','product'=>$product]);
     }
+
     public function store(Request $request) {
 
         $product_pics = [];
