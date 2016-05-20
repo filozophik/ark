@@ -8,6 +8,7 @@
 
         return {
             all: function() {
+                console.log();
                 return Restangular.one('products');
             },
             one: function(id) {
