@@ -6,16 +6,17 @@
 
     angular.module("app.services").factory('products', ['Restangular', function(Restangular) {
 
+        var all = function() {
+            console.log();
+            return Restangular.one('products');
+        };
+
+        var single = function(id) {
+            return Restangular.one('products',id);
+        };
         return {
-            all: function() {
-                console.log();
-                return Restangular.one('products');
-            },
-            one: function(id) {
-                console.log(id);
-                console.log(_.find(products,function(o) { return o.id == id;}));
-                return _.find(products,function(o) {return o.id == id;});
-            }
+            all: all,
+            single: single
         };
     }]);
 })();

@@ -1,43 +1,3 @@
-/* Custom Stylesheet */
-/**
-* Use this file to override Materialize files so you can update
-* the core Materialize files in the future
-*
-* Made By MaterializeCSS.com
-*/
-/* Main Website Template */
-.header, .brand-logo {
-  font-family: "Josefin Slab"; }
-
-nav {
-  color: black; }
-
-.breadcrumb {
-  color: rgba(0, 0, 0, 0.7); }
-  .breadcrumb:before {
-    font-size: 14px;
-    font-family: FontAwesome;
-    color: black;
-    content: "\f0da";
-    vertical-align: middle; }
-  .breadcrumb:last-child {
-    color: #f44336; }
-
-@media screen and (min-width: 993px) {
-  .large-container {
-    margin: 0 auto;
-    max-width: 1280px;
-    width: 70%; } }
-
-@media screen and (max-width: 992px) {
-  .medium-down-container {
-    margin: 0 auto;
-    width: 85%; } }
-
-@media screen and (max-width: 600px) {
-  .medium-down-container {
-    width: 90%; } }
-
 .red.lighten {
   background-color: #EF6979 !important; }
 
@@ -185,5 +145,45 @@ nav .brand-logo {
 .collapsible ul {
   color: #999;
   font-size: 0.9rem; }
+
+/* Custom Stylesheet */
+/**
+* Use this file to override Materialize files so you can update
+* the core Materialize files in the future
+*
+* Made By MaterializeCSS.com
+*/
+/* Main Website Template */
+.header, .brand-logo {
+  font-family: "Josefin Slab"; }
+
+nav {
+  color: black; }
+
+.breadcrumb {
+  color: rgba(0, 0, 0, 0.7); }
+  .breadcrumb:before {
+    font-size: 14px;
+    font-family: FontAwesome;
+    color: black;
+    content: "\f0da";
+    vertical-align: middle; }
+  .breadcrumb:last-child {
+    color: #f44336; }
+
+@media screen and (min-width: 993px) {
+  .large-container {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 70%; } }
+
+@media screen and (max-width: 992px) {
+  .medium-down-container {
+    margin: 0 auto;
+    width: 85%; } }
+
+@media screen and (max-width: 600px) {
+  .medium-down-container {
+    width: 90%; } }
 
 /*# sourceMappingURL=app.css.map */

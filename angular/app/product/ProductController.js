@@ -8,7 +8,6 @@
      * Created by lofo on 11/04/16.
      */
     angular.module('app.controllers').controller('ProductController', ['$scope', 'products', '$stateParams', function ($scope, products, $stateParams) {
-
         //Done Through REST
         $scope.related = [
             /* Tops */
@@ -70,6 +69,10 @@
             }
 
         ];
-        $scope.item = products.one($stateParams.id);
+        products.single($stateParams.id).get().then(function(resolve) {
+            $scope.item = resolve;
+        }, function(reject) {
+            console.log(reject);
+        });
     }]);
 })();
