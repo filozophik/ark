@@ -38,18 +38,35 @@ class ProductController extends Controller
         return response()->json(['status'=>'OK','product'=>$product]);
     }
 
-    public function update($id, Request $request) {
+    public function update(Request $request, $id) {
+        $product_pics = [];
+        $img = null;
+
         $product = Product::find($id);
+        // dd($product);
         $product->description = $request->description;
-        $product->gender = $request->gender;
-        $product->category_id = $request->category;
-        $product->subcategory_id = $request->subcategory;
-        $product->colors = implode(',', $request->colors);
+//      $product->gender = $request->gender;
+//      $product->category_id = $request->category;
+//      $product->subcategory_id = $request->subcategory;
+//      $product->colors = implode(";", $request->colors);
         $product->specifications = nl2br($request->specs);
         $product->price = $request->price;
         $product->clearance = $request->clearance;
         $product->save();
-        return response()->json(['status'=>'OK','product'=>$product]);
+
+        //Upload Pictures onto website (requires intervention)
+        //Insert all the other things
+/*
+        foreach ($request->pictures as $key => $picture) {
+            $img = Image::make($picture)->fit(240,330)->save(public_path() .
+                "/products/{$request->gender}/$request->subcategory" . "_" . $product->id . time() . "_{$key}.jpg");
+            array_push($product_pics,$img->basename);
+        }
+
+        $product->pictures = implode(',',$product_pics);*/
+        $product->save();
+
+        return response()->json(['status'=>'OK', 'data' => $product]);
     }
 
     public function store(Request $request) {
@@ -58,6 +75,7 @@ class ProductController extends Controller
         $img = null;
 
         $product = new Product();
+
         $product->description = $request->description;
         $product->gender = $request->gender;
         $product->category_id = $request->category;
@@ -75,11 +93,11 @@ class ProductController extends Controller
                 "/products/{$request->gender}/$request->subcategory" . "_" . $product->id . time() . "_{$key}.jpg");
             array_push($product_pics,$img->basename);
         }
-        //dd($product_pics);
+
         $product->pictures = implode(',',$product_pics);
 
         $product->save();
 
-        return response()->json(['status'=>'OK','product'=>$product]);
+        return response()->json(['status'=>'OK', 'data' => $product]);
     }
 }

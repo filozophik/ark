@@ -2,23 +2,25 @@
 
 namespace Ark\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Ark\Models\Product;
 use Ark\Http\Requests;
-use Intervention\Image\Facades\Image;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\Log;
+
 
 class AdminController extends Controller
 {
     //
-    public function getProductsSingle($id = 0) {
-        $product = null;
-        if ($id != 0) {
-            $product = Product::find($id);
+    public function getProducts($id = null) {
+        if($id !== null) {
+            try {
+                $product = Product::findOrFail($id);
+                return view('admin.products.single')->with('product',$product);
+            } catch (ModelNotFoundException $e) {
+                Log::error($e->getMessage());
+                return view('admin.products.index')->with('error',$e->getMessage());
+            }
         }
-        return view('admin.products.single')
-            ->with('product',$product);
-    }
-    public function getProducts() {
         return view('admin.products.index');
     }
 }
