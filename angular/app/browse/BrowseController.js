@@ -23,8 +23,9 @@
 
             // Get The Products
             products.all().getList().then(function (resolve) {
-                $scope.products = resolve;
-                $scope.results = _.filter($scope.products,['gender', gender]);
+
+                $scope.products = _.filter(resolve,['gender', gender]);
+                $scope.results = $scope.products;
             }, function (reject) {
                 console.log(reject);
             });
