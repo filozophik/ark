@@ -1,46 +1,3 @@
-<<<<<<< HEAD
-.red.lighten{background-color:#ef6979!important}.card.browse .card-image{height:12rem;overflow:hidden}body{display:-webkit-flex;display:-ms-flexbox;display:flex;min-height:100vh;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}.main{-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto}p{line-height:2rem}.home{margin-top:-64px;height:100vh;background:url(../images/ark1.jpg) no-repeat 50%;background-size:cover}.home-secondary{background:url(../images/home/clothing_store.jpg) no-repeat 50%;height:500px}.home-secondary .container,.home .container{background:hsla(0,0%,100%,.7);border-radius:10px;padding:1.5rem}.product-picture{text-align:center}.product-picture img{max-width:100%;margin:0 auto}.breadcrumb{text-transform:capitalize;font-weight:300}input[type=range]+.thumb.active .value{margin-top:0!important}.browser-default{max-width:400px;margin-bottom:1rem}.slick-next:before,.slick-prev:before{font-family:FontAwesome;color:#000}.slick-prev{left:0}.slick-prev:before{content:'\f0a8'}.slick-next{right:0}.slick-next:before{content:'\f0a9'}.cust{border:1px solid;vertical-align:middle;min-width:47px;height:auto!important;min-height:30px;text-align:center;padding-left:0!important;padding:10px!important}.cust:after,.cust:before{display:none}[type=radio]:checked+.cust{border:2px solid blue}.brand-logo img{height:40px;padding:0 6px;vertical-align:middle}nav .brand-logo{padding:0 1rem}.search-wrapper{width:400px}@media screen and (max-width:1210px){.search-wrapper{width:200px}}.side-nav .search-wrapper{padding:0 15px;width:100%}.collapsible .collapsible-header{font-weight:500}.collapsible .main{border-bottom:2px solid #bbb6b6;font-weight:300;font-size:1.4rem}.collapsible ul{color:#999;font-size:.9rem}.brand-logo,.header{font-family:Josefin Slab}nav{color:#000}.breadcrumb{color:rgba(0,0,0,.7)}.breadcrumb:before{font-size:14px;font-family:FontAwesome;color:#000;content:"\f0da";vertical-align:middle}.breadcrumb:last-child{color:#f44336}@media screen and (min-width:993px){.large-container{margin:0 auto;max-width:1280px;width:70%}}@media screen and (max-width:992px){.medium-down-container{margin:0 auto;width:85%}}@media screen and (max-width:600px){.medium-down-container{width:90%}}nav{background-color:#fff}nav .brand-logo,nav ul a{color:#444}
-=======
-/* Custom Stylesheet */
-/**
-* Use this file to override Materialize files so you can update
-* the core Materialize files in the future
-*
-* Made By MaterializeCSS.com
-*/
-/* Main Website Template */
-.header, .brand-logo {
-  font-family: "Josefin Slab"; }
-
-nav {
-  color: black; }
-
-.breadcrumb {
-  color: rgba(0, 0, 0, 0.7); }
-  .breadcrumb:before {
-    font-size: 14px;
-    font-family: FontAwesome;
-    color: black;
-    content: "\f0da";
-    vertical-align: middle; }
-  .breadcrumb:last-child {
-    color: #f44336; }
-
-@media screen and (min-width: 993px) {
-  .large-container {
-    margin: 0 auto;
-    max-width: 1280px;
-    width: 70%; } }
-
-@media screen and (max-width: 992px) {
-  .medium-down-container {
-    margin: 0 auto;
-    width: 85%; } }
-
-@media screen and (max-width: 600px) {
-  .medium-down-container {
-    width: 90%; } }
-
 p {
   line-height: 2rem; }
 
@@ -109,12 +66,6 @@ body {
   -ms-flex: 1 0 auto;
   flex: 1 0 auto; }
 
-/* Main Nav Logo */
-nav {
-  background-color: white; }
-  nav ul a, nav .brand-logo {
-    color: #444; }
-
 p {
   line-height: 2rem; }
 
@@ -178,6 +129,12 @@ input[type=range] + .thumb.active .value {
   [type="radio"]:checked + .cust {
     border: solid 2px blue; }
 
+/* Main Nav Logo */
+nav {
+  background-color: white; }
+  nav ul a, nav .brand-logo {
+    color: #444; }
+
 .brand-logo img {
   height: 40px;
   padding: 0 6px;
@@ -207,5 +164,44 @@ nav .brand-logo {
   color: #999;
   font-size: 0.9rem; }
 
+/* Custom Stylesheet */
+/**
+* Use this file to override Materialize files so you can update
+* the core Materialize files in the future
+*
+* Made By MaterializeCSS.com
+*/
+/* Main Website Template */
+.header, .brand-logo {
+  font-family: "Josefin Slab"; }
+
+nav {
+  color: black; }
+
+.breadcrumb {
+  color: rgba(0, 0, 0, 0.7); }
+  .breadcrumb:before {
+    font-size: 14px;
+    font-family: FontAwesome;
+    color: black;
+    content: "\f0da";
+    vertical-align: middle; }
+  .breadcrumb:last-child {
+    color: #f44336; }
+
+@media screen and (min-width: 993px) {
+  .large-container {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 70%; } }
+
+@media screen and (max-width: 992px) {
+  .medium-down-container {
+    margin: 0 auto;
+    width: 85%; } }
+
+@media screen and (max-width: 600px) {
+  .medium-down-container {
+    width: 90%; } }
+
 /*# sourceMappingURL=app.css.map */
->>>>>>> 663ab13... Browse and Category updates

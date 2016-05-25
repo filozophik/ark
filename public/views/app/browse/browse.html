@@ -13,8 +13,8 @@
             <ul class="collapsible" data-collapsible="accordion">
                 <div class="red lighten-1 white-text main collapsible-header" ng-show="$stateParams.endpoint"></div>
                 <div class=" red lighten-1 white-text main collapsible-header">Shop By Type</div>
-                <li ng-repeat="type in activeCategory">
-                    <div class="red lighten-1 white-text collapsible-header active" ng-click="addFilter('category',type.name)">{{type.name}}</div>
+                <li ng-repeat="type in activeGender">
+                    <div class="red lighten-1 white-text collapsible-header" ng-click="addFilter('category',type.name)">{{type.name}}</div>
                     <div class="collapsible-body">
                         <ul class="collection">
                             <li ng-repeat="subcategory in type.subcategories" class="red lighten-5 collection-item" ng-click="addFilter('subcategory',subcategory.name)">{{subcategory.name}}</li>

@@ -1,4 +1,11 @@
 
+/* Main Nav Logo */
+nav {
+  background-color:white;
+  ul a, .brand-logo {
+    color: #444;
+  }
+}
 .brand-logo {
   img {
     height:40px; padding: 0 6px; vertical-align: middle

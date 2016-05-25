@@ -10,7 +10,7 @@
     </div><hr>
     <div class="row section" ng-repeat="item in ngCart.getCart().items track by $index">
         <i style="position:absolute" ng-click="ngCart.removeItemById(item.getId())" class="fa fa-times"></i>
-        <div class="col s4 center"><img style="max-height:100px" ng-src="/images/products/{{ item.getData().category }}/{{ item.getData().pictures[0] }}"></div>
+        <div class="col s4 center"><img style="max-height:100px" ng-src="/products/{{ item.getData().gender }}/{{ item.getData().pictures[0] }}"></div>
         <div class="col s8">
             <h5 ui-sref="product({id: item.getData().id})">{{ item.getName() }}</h5>
             <div>Size: XS</div>
