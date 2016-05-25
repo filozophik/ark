@@ -73,6 +73,8 @@
 
     'blacklist' => [
         '/api/',
+        '*/product/',
+        '*/cart/',
         '*.js',
         '*.css',
         '*.xml',
