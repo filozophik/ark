@@ -53,11 +53,8 @@ class ProductController extends Controller
     }
 
     public function update(Request $request, $id) {
-<<<<<<< HEAD
   //      $product_pics = [];
-=======
-   //     $product_pics = [];
->>>>>>> 13b2bb1... Create new Endpoints for Limited Products
+
         $img = null;
 
         $product = Product::find($id);
