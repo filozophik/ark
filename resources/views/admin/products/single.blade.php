@@ -14,7 +14,7 @@
 <body>
 
 <div class="col-xs-12 col-sm-offset-2 col-sm-8">
-    <form method="post" action="/api/v1/products/{{$product->id === null ? '' : $product->id}}" enctype="multipart/form-data">
+    <form method="post" action="/api/v1/products/{{(isset($product) && $product->id !== null) ? $product->id : ''}}" enctype="multipart/form-data">
         {{ method_field('PUT') }}
         {{csrf_field()}}
         @if(isset($product) && $product !== null)
@@ -23,20 +23,20 @@
         <fieldset class="form-group col-sm-12">
             <label for="description">Description</label>
             <input type="text" class="form-control" id="description" name="description" placeholder="Enter description"
-            value="{{($product->description === null) ? '' : $product->description}}">
+            value="{{(isset($product) && $product->description !== null) ? $product->description : ''}}">
         </fieldset>
         <fieldset class="form-group col-sm-12" id="gender">
             <label for="gender">Gender</label>
             <div class="radio-inline">
                 <label class="radio-inline">
                     <input type="radio" name="gender" id="gender1" value="M"
-                            {{ ($product->gender !== null && $product->gender === 'M')? 'checked="checked"' :'' }}>
+                            {{ (isset($product) && $product->gender !== null && $product->gender === 'M')? 'checked="checked"' :'' }}>
                     Men
                 </label>
             </div>
             <div class="radio-inline">
                 <label class="radio-inline">
-                    <input type="radio" name="gender" id="gender2" value="F" {{ ($product->gender !== null && $product->gender === 'F')? 'checked="checked"' :'' }}>
+                    <input type="radio" name="gender" id="gender2" value="F" {{ (isset($product) && $product->gender !== null && $product->gender === 'F')? 'checked="checked"' :'' }}>
                     Women
                 </label>
             </div>
