@@ -1,3 +1,21 @@
+p {
+  line-height: 2rem; }
+
+.home {
+  margin-top: -64px;
+  height: 100vh;
+  background: url("../images/ark1.jpg") no-repeat center center;
+  background-size: cover; }
+
+.home-secondary {
+  background: url("../images/home/clothing_store.jpg") no-repeat center center;
+  height: 500px; }
+
+.home .container, .home-secondary .container {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 1.5rem; }
+
 .red.lighten {
   background-color: #EF6979 !important; }
 
@@ -34,23 +52,19 @@
     height: 12rem;
     overflow: hidden; }
 
-p {
-  line-height: 2rem; }
+body {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column; }
 
-.home {
-  margin-top: -64px;
-  height: 100vh;
-  background: url("../images/ark1.jpg") no-repeat center center;
-  background-size: cover; }
-
-.home-secondary {
-  background: url("../images/home/clothing_store.jpg") no-repeat center center;
-  height: 500px; }
-
-.home .container, .home-secondary .container {
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
-  padding: 1.5rem; }
+.main {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto; }
 
 p {
   line-height: 2rem; }
@@ -189,19 +203,5 @@ nav {
 @media screen and (max-width: 600px) {
   .medium-down-container {
     width: 90%; } }
-
-body {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-height: 100vh;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column; }
-
-.main {
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto; }
 
 /*# sourceMappingURL=app.css.map */

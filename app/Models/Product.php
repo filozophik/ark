@@ -37,10 +37,24 @@ class Product extends Model {
         return $this->belongsTo('Ark\Models\Category','category_id','id');
     }
     public function subcategory() {
-        return $this->hasOne('Ark\Models\Subcategory');
+        return $this->belongsTo('Ark\Models\Subcategory','subcategory_id','id');
     }
-    public function list() {
-        $products = $this->products->get();
+    public function list($limit = -1, $subcategory = null, $clearance = false) {
+
+
+        $query = ($subcategory !== null) ? $this->products->where('subcategories.name','=', $subcategory) : $this->products;
+
+        $products = ($clearance) ? $query->where('clearance','<>', 0)->orderBy('clearance','asc')->take($limit)->get() : $query->orderBy('updated_at','desc')->take($limit)->get();
+
+        /*function() use ($query,$limit) {
+            $q = $query->where('clearance','<>', 0)->orderBy('clearance')->take($limit)->get();
+            shuffle($q);
+            return $q;
+        }
+        dd($products());
+        */
+
+
         foreach ($products as $product) {
             $this->format($product);
         }

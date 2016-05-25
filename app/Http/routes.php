@@ -16,6 +16,10 @@ Route::get('/unsupported-browser', 'AngularController@unsupported');
 Route::controller('admin', 'AdminController');
 
 Route::group(['prefix' => 'api/v1','middleware'=>'api'], function() {
+
     Route::resource('category','Api\CategoryController');
+    Route::get('products/0/latest','Api\ProductController@latest');
+    Route::get('products/0/clearance','Api\ProductController@clearance');
+    Route::get('products/{id}/related','Api\ProductController@similar');
     Route::resource('products','Api\ProductController');
 });
