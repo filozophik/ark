@@ -6,5 +6,11 @@
 
     angular.module("app.services").factory('categories', ['Restangular', function (Restangular) {
 
+        return {
+            all: function () {
+                console.log();
+                return Restangular.one('category');
+            }
+        };
     }]);
 })();
