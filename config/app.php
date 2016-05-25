@@ -156,7 +156,8 @@ return [
         Ark\Providers\EventServiceProvider::class,
         Ark\Providers\RouteServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+        Nutsweb\LaravelPrerender\LaravelPrerenderServiceProvider::class
     ],
 
     /*

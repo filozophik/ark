@@ -4,14 +4,13 @@
 (function(){
     "use strict";
 
-    angular.module('app.routes').config( function($stateProvider, $urlRouterProvider ) {
+    angular.module('app.routes').config( function($stateProvider, $urlRouterProvider,$locationProvider ) {
 
         var getView = function( viewName ){
             return '/views/app/' + viewName + '/' + viewName + '.html';
         };
 
         $urlRouterProvider.otherwise('/');
-
         $stateProvider
             .state('about', {
                 url: '/about',
@@ -76,5 +75,7 @@
                     }
                 }
         });
+
+        $locationProvider.hashPrefix('!');
     });
 })();
