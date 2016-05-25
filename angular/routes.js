@@ -40,7 +40,7 @@
                     }
                 }
             }).state('browse', {
-                url: '/browse/{endpoint}',
+                url: '/browse/{gender}',
                 views: {
                     header: {
                         templateUrl: getView('shopping-header')

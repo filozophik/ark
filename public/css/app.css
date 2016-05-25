@@ -66,12 +66,6 @@ body {
   -ms-flex: 1 0 auto;
   flex: 1 0 auto; }
 
-/* Main Nav Logo */
-nav {
-  background-color: white; }
-  nav ul a, nav .brand-logo {
-    color: #444; }
-
 p {
   line-height: 2rem; }
 
@@ -134,6 +128,12 @@ input[type=range] + .thumb.active .value {
     display: none; }
   [type="radio"]:checked + .cust {
     border: solid 2px blue; }
+
+/* Main Nav Logo */
+nav {
+  background-color: white; }
+  nav ul a, nav .brand-logo {
+    color: #444; }
 
 .brand-logo img {
   height: 40px;
