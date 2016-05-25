@@ -13,7 +13,20 @@
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
-            .state('landing', {
+            .state('about', {
+                url: '/',
+                views: {
+                    header: {
+                        templateUrl: getView('shopping-header')
+                    },
+                    main: {
+                        templateUrl: getView('about')
+                    },
+                    footer: {
+                        templateUrl: getView('footer')
+                    }
+                }
+            }).state('landing', {
                 url: '/',
                 views: {
                     header: {

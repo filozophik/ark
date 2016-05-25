@@ -1,3 +1,21 @@
+p {
+  line-height: 2rem; }
+
+.home {
+  margin-top: -64px;
+  height: 100vh;
+  background: url("../images/ark1.jpg") no-repeat center center;
+  background-size: cover; }
+
+.home-secondary {
+  background: url("../images/home/clothing_store.jpg") no-repeat center center;
+  height: 500px; }
+
+.home .container, .home-secondary .container {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 1.5rem; }
+
 .red.lighten {
   background-color: #EF6979 !important; }
 
@@ -54,6 +72,24 @@ nav {
   nav ul a, nav .brand-logo {
     color: #444; }
 
+p {
+  line-height: 2rem; }
+
+.home {
+  margin-top: -64px;
+  height: 100vh;
+  background: url("../images/ark1.jpg") no-repeat center center;
+  background-size: cover; }
+
+.home-secondary {
+  background: url("../images/home/clothing_store.jpg") no-repeat center center;
+  height: 500px; }
+
+.home .container, .home-secondary .container {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 1.5rem; }
+
 .product-picture {
   text-align: center; }
   .product-picture img {
@@ -98,24 +134,6 @@ input[type=range] + .thumb.active .value {
     display: none; }
   [type="radio"]:checked + .cust {
     border: solid 2px blue; }
-
-p {
-  line-height: 2rem; }
-
-.home {
-  margin-top: -64px;
-  height: 100vh;
-  background: url("../images/ark1.jpg") no-repeat center center;
-  background-size: cover; }
-
-.home-secondary {
-  background: url("../images/home/clothing_store.jpg") no-repeat center center;
-  height: 500px; }
-
-.home .container, .home-secondary .container {
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
-  padding: 1.5rem; }
 
 .brand-logo img {
   height: 40px;

@@ -4,9 +4,20 @@
     /**
      * Created by lofo on 11/04/16.
      */
-    angular.module('app.controllers').controller('BrowseController', ['$scope', '$stateParams', '_', 'products', function($scope, $stateParams, _, products) {
+    angular.module('app.controllers').controller('BrowseController',
+        ['$scope', '$stateParams', '_', 'products', 'categories',
+
+        function($scope, $stateParams, _, products, categories) {
 
         $scope.filters = [];
+        categories.all().get().then(function(resolve) {
+            $scope.categories = resolve;
+            $scope.activeCategory = $scope.categories.M;
+        },function(reject) {
+            console.log(reject);
+        });
+
+
         //Done Through REST
         products.all().getList().then(function(resolve) {
             $scope.products = resolve;
@@ -16,8 +27,6 @@
         });
 
         //What We Manipulate During CI, will be all done through rest.
-
-
         $scope.removeFilter = function(index) {
             $scope.filters.splice(index,1);
             console.log($scope.filters);
