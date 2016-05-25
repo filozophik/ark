@@ -1,3 +1,4 @@
+process.env.DISABLE_NOTIFIER = true;
 var elixir = require('laravel-elixir');
 require('./tasks/angular.task.js');
 require('./tasks/bower.task.js');

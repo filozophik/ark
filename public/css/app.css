@@ -1,24 +1,3 @@
-p {
-  line-height: 2rem; }
-
-.home {
-  margin-top: -64px;
-  height: 65vh;
-  background: url("../images/ark1.jpg") no-repeat center center;
-  background-size: cover; }
-  @media screen and (max-width: 599px) {
-    .home {
-      margin-top: 0; } }
-
-.home-secondary {
-  background: url("../images/home/clothing_store.jpg") no-repeat center center;
-  height: 500px; }
-
-.home .container, .home-secondary .container {
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
-  padding: 1.5rem; }
-
 .red.lighten {
   background-color: #EF6979 !important; }
 
@@ -55,19 +34,27 @@ p {
     height: 12rem;
     overflow: hidden; }
 
-body {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-height: 100vh;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column; }
+p {
+  line-height: 2rem; }
 
-.main {
-  -webkit-flex: 1 0 auto;
-  -ms-flex: 1 0 auto;
-  flex: 1 0 auto; }
+.home {
+  margin-top: -64px;
+  height: 65vh;
+  background: url("../images/ark1.jpg") no-repeat center center;
+  background-size: cover; }
+  @media screen and (max-width: 599px) {
+    .home {
+      margin-top: 0; } }
+
+.home-secondary {
+  background: url("../images/home/clothing_store.jpg") no-repeat center center;
+  height: 500px; }
+
+.home .container, .home-secondary .container {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 1.5rem; }
+
 
 .product-picture {
   text-align: center; }
@@ -113,7 +100,6 @@ input[type=range] + .thumb.active .value {
     display: none; }
   [type="radio"]:checked + .cust {
     border: solid 2px blue; }
-
 
 /* Main Nav Logo */
 nav {
@@ -189,5 +175,19 @@ nav {
 @media screen and (max-width: 600px) {
   .medium-down-container {
     width: 90%; } }
+
+body {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+.main {
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  flex: 1 0 auto; }
 
 /*# sourceMappingURL=app.css.map */
