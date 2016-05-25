@@ -14,7 +14,7 @@
 
         $stateProvider
             .state('about', {
-                url: '/',
+                url: '/about',
                 views: {
                     header: {
                         templateUrl: getView('shopping-header')
