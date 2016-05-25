@@ -13,38 +13,11 @@
             <ul class="collapsible" data-collapsible="accordion">
                 <div class="red lighten-1 white-text main collapsible-header" ng-show="$stateParams.endpoint"></div>
                 <div class=" red lighten-1 white-text main collapsible-header">Shop By Type</div>
-                <li>
-                    <div class="red lighten-1 white-text collapsible-header active" ng-click="addFilter('category','top')">Tops</div>
+                <li ng-repeat="type in activeCategory">
+                    <div class="red lighten-1 white-text collapsible-header active" ng-click="addFilter('category',type.name)">{{type.name}}</div>
                     <div class="collapsible-body">
                         <ul class="collection">
-                            <li class="red lighten-5 collection-item" ng-click="addFilter('subcategory','t-shirt')">T-Shirts</li>
-                            <li class="red lighten-5 collection-item" ng-click="addFilter('subcategory','shirt')">Shirts</li>
-                            <li class="red lighten-5 collection-item" ng-click="addFilter('subcategory','tank-top')">Tank Top</li>
-                            <li class="red lighten-5 collection-item" ng-click="addFilter('subcategory','blouse')">Blouse</li>
-                            <li class="red lighten-5 collection-item" ng-click="addFilter('subcategory','long-sleeve')">Long Sleeve</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <div class="red lighten-1 white-text collapsible-header active" ng-click="addFilter('category','bottom')">Bottoms</div>
-                    <div class="collapsible-body">
-                        <ul class="collection">
-                            <li class="red lighten-5 collection-item">Pants</li>
-                            <li class="red lighten-5 collection-item">Shorts</li>
-                            <li class="red lighten-5 collection-item">Jeans</li>
-                            <li class="red lighten-5 collection-item">Leggings</li>
-                            <li class="red lighten-5 collection-item">Skirts</li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <div class="red lighten-1 white-text collapsible-header" ng-click="addFilter('category','outerwear')">Outerwear</div>
-                    <div class="collapsible-body">
-                        <ul class="collection">
-                            <li class="red lighten-5 collection-item">Jackets & Coats</li>
-                            <li class="red lighten-5 collection-item">Sweatshirt</li>
-                            <li class="red lighten-5 collection-item">Cardigan</li>
-                            <li class="red lighten-5 collection-item">Blazer</li>
+                            <li ng-repeat="subcategory in type.subcategories" class="red lighten-5 collection-item" ng-click="addFilter('subcategory',subcategory.name)">{{subcategory.name}}</li>
                         </ul>
                     </div>
                 </li>
@@ -52,7 +25,7 @@
         </div>
         <div class="col s12 l9">
             <div class="col s6 m4 l3" ng-repeat="product in results" ng-show="results">
-                <div ui-sref="product({id: product.id})" class="card browse">
+                <div ui-sref="product({id: product.id})" class="card">
                     <div class="card-image">
                         <img ng-src="{{ 'products/' + product.gender + '/' + product.pictures[0] }}">
                     </div>
