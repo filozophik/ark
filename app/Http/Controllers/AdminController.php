@@ -14,6 +14,9 @@ class AdminController extends Controller
     public function getProducts($id = null) {
         if($id !== null) {
             try {
+                if($id == 0) {
+                    return view('admin.products.single')->with('product',null);
+                }
                 $product = Product::findOrFail($id);
                 return view('admin.products.index')->with('product',$product);
             } catch (ModelNotFoundException $e) {

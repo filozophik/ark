@@ -3,9 +3,12 @@ p {
 
 .home {
   margin-top: -64px;
-  height: 100vh;
+  height: 65vh;
   background: url("../images/ark1.jpg") no-repeat center center;
   background-size: cover; }
+  @media screen and (max-width: 599px) {
+    .home {
+      margin-top: 0; } }
 
 .home-secondary {
   background: url("../images/home/clothing_store.jpg") no-repeat center center;
@@ -66,23 +69,6 @@ body {
   -ms-flex: 1 0 auto;
   flex: 1 0 auto; }
 
-p {
-  line-height: 2rem; }
-
-.home {
-  margin-top: -64px;
-  height: 100vh;
-  background: url("../images/ark1.jpg") no-repeat center center;
-  background-size: cover; }
-
-.home-secondary {
-  background: url("../images/home/clothing_store.jpg") no-repeat center center;
-  height: 500px; }
-
-.home .container, .home-secondary .container {
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 10px;
-  padding: 1.5rem; }
 
 .product-picture {
   text-align: center; }

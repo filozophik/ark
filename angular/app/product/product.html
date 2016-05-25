@@ -93,7 +93,7 @@
             <div class="col {{ $index == 0 ? 'offset-l1' : '' }} {{ $index == 2 ? 'hide-on-small-only' : '' }} {{ $index >= 3 ? 'hide-on-med-and-down' : ''}} s6 m4 l2" ng-repeat="product in related">
                 <div class="card">
                     <div class="card-image">
-                        <img ng-src="{{ 'images/products/' + product.category + '/' + product.pictures[0] }}">
+                        <img ng-src="{{ '/products/' + product.gender + '/' + product.pictures[0] }}">
                     </div>
                     <div class="card-action right-align">
                         <span class="">{{ product.price | currency }}</span>

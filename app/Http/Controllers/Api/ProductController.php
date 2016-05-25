@@ -23,10 +23,24 @@ class ProductController extends Controller
         $products = $this->product->list();
         return response()->json($products);
     }
-
+    public function similar($id) {
+        $subcategory = $this->product->find($id)->subcategory;
+        //dd($subcategory->name);
+        $products = $this->product->list(5,$subcategory->name);
+        return response()->json($products);
+    }
+    public function latest() {
+        $products = $this->product->list(10);
+        return response()->json($products);
+    }
+    public function clearance() {
+        $products = $this->product->list(10,null,true);
+        return response()->json($products);
+    }
     public function show($id) {
         return response()->json($this->product->one($id));
     }
+
 
     public function destroy($id) {
         $product = Product::find($id);
@@ -39,7 +53,11 @@ class ProductController extends Controller
     }
 
     public function update(Request $request, $id) {
+<<<<<<< HEAD
   //      $product_pics = [];
+=======
+   //     $product_pics = [];
+>>>>>>> 13b2bb1... Create new Endpoints for Limited Products
         $img = null;
 
         $product = Product::find($id);

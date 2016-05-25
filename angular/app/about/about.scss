@@ -3,7 +3,10 @@ p {
 }
 .home {
   margin-top:-64px;
-  height:100vh;
+  @media screen and (max-width: 599px) {
+    margin-top: 0;
+  }
+  height:65vh;
   background:url('../images/ark1.jpg') no-repeat center center;
   background-size:cover;
 
