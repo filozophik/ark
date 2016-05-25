@@ -20,7 +20,7 @@
             {{method_field('PUT')}}
         @endif
         {{csrf_field()}}
-        @if($product !== null)
+        @if(isset($product) && $product !== null)
             <input type="hidden" name="id" value="{{$product->id}}">
         @endif
         <fieldset class="form-group col-sm-12">
@@ -71,18 +71,20 @@
         <fieldset class="form-group col-sm-12">
             <label for="specs">Specifications</label>
             <textarea class="form-control" id="specs" name="specs" rows="3">
-                {{(isset($product) && $product->specifications !== null) ? str_ireplace(["<br />","<br>","<br/>"], "\r\n", $product->specifications) : ''}}"
+                @if(isset($product) && $product->specifications !== null)
+                    {{str_ireplace(["<br />","<br>","<br/>"], "\r\n", $product->specifications)}}
+                @endif
             </textarea>
         </fieldset>
         <fieldset class="form-group  col-sm-6">
             <label for="price">Price</label>
             <input type="text" class="form-control" name="price" id="price" placeholder="Price"
-                   value="{{(isset($product) && $product->price === null) ? '' : $product->price}}">
+                   value="{{(isset($product) && $product->price !== null) ? $product->price : ''}}">
         </fieldset>
         <fieldset class="form-group  col-sm-6">
             <label for="clearance">Clearance Price</label>
             <input type="text" class="form-control" id="clearance" name="clearance" placeholder="Clearance Price"
-                   value="{{(isset($product) && $product->clearance === null) ? '' : $product->clearance}}">
+                   value="{{(isset($product) && $product->clearance !== null) ? $product->clearance : ''}}">
         </fieldset>
         <fieldset class="form-group  col-sm-12">
             <label for="pictures">Pictures</label>
