@@ -21,5 +21,4 @@
 
 <div ui-view="footer"></div>
 </body>
-
 </html>

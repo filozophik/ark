@@ -69,7 +69,6 @@ body {
   -ms-flex: 1 0 auto;
   flex: 1 0 auto; }
 
-
 .product-picture {
   text-align: center; }
   .product-picture img {
@@ -114,6 +113,7 @@ input[type=range] + .thumb.active .value {
     display: none; }
   [type="radio"]:checked + .cust {
     border: solid 2px blue; }
+
 
 /* Main Nav Logo */
 nav {

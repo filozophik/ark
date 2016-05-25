@@ -1,8 +1,10 @@
 /vendor
 /node_modules
-/public/storage
 Homestead.yaml
 Homestead.json
 .env
 /bower_components
 .idea
+/public/css/*.css
+/public/js/*.js
+/public/views
