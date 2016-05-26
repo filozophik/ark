@@ -23,7 +23,36 @@ class CategoryController extends Controller
             ];
 
             foreach($category->subcategories as $subcategory) {
-                array_push($query[$category->gender][$category->id]['subcategories'],['id'=>$subcategory->id,'name'=>$subcategory->name]);
+
+                $entity = [
+                    'id'=>$subcategory->id,
+                    'name'=>$subcategory->name,
+                    'path' => implode('/',[$category->gender,$category->name,$subcategory->name])
+                ];
+                array_push($query[$category->gender][$category->id]['subcategories'],$entity);
+            }
+        }
+
+        return response()->json($query);
+    }
+
+    public function show($id = null) {
+        $query = [];
+        $categories = Category::all();
+        foreach($categories as $category) {
+            $entity = [
+                'name'=>($category->gender == 'M' ? "Men's $category->name" : "Women's $category->name"),
+                'path' => implode('/',[$category->gender,$category->name])
+            ];
+            array_push($query,$entity);
+
+            foreach($category->subcategories as $subcategory) {
+                $entity = [
+                    'id'=>$subcategory->id,
+                    'name'=>($category->gender == 'M' ? "Men's $subcategory->name" : "Women's $subcategory->name"),
+                    'path' => implode('/',[$category->gender,$category->name,$subcategory->name])
+                ];
+                array_push($query,$entity);
             }
         }
         return response()->json($query);

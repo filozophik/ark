@@ -8,7 +8,6 @@
 
         return {
             all: function () {
-                console.log();
                 return Restangular.one('category');
             }
         };

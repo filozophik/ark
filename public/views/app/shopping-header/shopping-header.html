@@ -1,4 +1,4 @@
-<div class="navbar-fixed">
+<div class="navbar-fixed" ng-controller="HeaderController">
     <nav class="white" role="navigation">
         <div class="nav-wrapper medium-down-container">
             <a id="logo-container" ui-sref="landing" class="brand-logo">
@@ -10,7 +10,18 @@
             <ul class="right hide-on-med-and-down">
                 <li>
                     <div class="search-wrapper">
-                        <input id="search" placeholder="Search our store..." style="width:85%">
+                        <angucomplete-alt id="search"
+                                          style="width:85%"
+                                          placeholder="Search countries"
+                                          pause="100"
+                                          selected-object="selectedSubject"
+                                          local-data="searchSubjects"
+                                          search-fields="name"
+                                          title-field="name"
+                                          description-field="path"
+                                          minlength="3"
+                                          input-class="form-control form-control-small"/>
+
                         <i class="black-text fa fa-search prefix"></i>
                     </div>
                 </li>
