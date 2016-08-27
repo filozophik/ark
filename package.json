@@ -17,6 +17,6 @@
     "jshint-stylish": "^2",
     "laravel-elixir-livereload": "^1.1.4",
     "main-bower-files": "^2.1.0",
-    "laravel-elixir": "^4.0"
+    "laravel-elixir": "^5.0"
   }
 }

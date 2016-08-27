@@ -13,7 +13,7 @@
         $urlRouterProvider.otherwise('/');
         $stateProvider
             .state('about', {
-                url: '/about',
+                url: '/',
                 views: {
                     header: {
                         templateUrl: getView('shopping-header')
@@ -25,7 +25,8 @@
                         templateUrl: getView('footer')
                     }
                 }
-            }).state('landing', {
+            });
+        /*.state('landing', {
                 url: '/',
                 views: {
                     header: {
@@ -75,7 +76,7 @@
                     }
                 }
         });
-
+*/
         $locationProvider.hashPrefix('!');
     });
 })();
