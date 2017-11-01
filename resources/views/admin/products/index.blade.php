@@ -13,7 +13,7 @@
 <body>
 <div class="col-xs-12 col-lg-offset-2 col-lg-8 container">
     <h3>List of Products</h3><hr>
-    <a href="/admin/products/0" class="btn">Add a Product</a>
+    <a href="/admin/products/0" class="btn" title="click twice to be transported somewhere magical">Add a Product</a>
     <table class="table">
         <tr>
             <th>Picture</th>
