@@ -17,6 +17,8 @@
 <div ui-view="header"></div>
 <div ui-view="main" class="main"></div>
 
+<a href="http://hurr-durr.com">Login</a>
+
 <div ui-view="footer"></div>
 <script src="/js/vendor.js"></script>
 <script src="/js/app.js"></script>
